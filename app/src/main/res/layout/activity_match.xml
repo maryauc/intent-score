@@ -1,110 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MatchActivity">
 
     <TextView
         android:id="@+id/txt_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:text="Home Team"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="16sp"
+        android:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="@+id/home_logo"
+        app:layout_constraintStart_toStartOf="@id/home_logo"
+        app:layout_constraintTop_toBottomOf="@+id/home_logo"
+        />
 
     <ImageView
         android:id="@+id/home_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="96dp"
+        android:layout_marginLeft="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_home"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
 
     <TextView
         android:id="@+id/score_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:textSize="80sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_logo" />
+        android:text="0"
+        android:textSize="36sp"
+        android:padding="24dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintStart_toEndOf="@id/home_logo"
+        app:layout_constraintEnd_toStartOf="@+id/stripline"
+        app:layout_constraintTop_toTopOf="@+id/home_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/home_logo"/>
+
+    <TextView
+        android:id="@+id/stripline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="46sp"
+        app:layout_constraintStart_toEndOf="@id/home_logo"
+        app:layout_constraintEnd_toStartOf="@id/away_logo"
+        app:layout_constraintTop_toTopOf="@id/home_logo"
+        app:layout_constraintBottom_toBottomOf="@id/home_logo"/>
 
     <Button
-        android:id="@+id/btn_add_home"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_add_home3"
+        android:layout_width="@id/guideline"
         android:layout_height="wrap_content"
-        android:text="Add Home Score"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="+3"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline2"/>
 
+    <Button
+        android:id="@+id/btn_add_home2"
+        android:layout_width="@id/guideline"
+        android:layout_height="wrap_content"
+        android:text="+2"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_home3"/>
+
+    <Button
+        android:id="@+id/btn_add_home1"
+        android:layout_width="@id/guideline"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_home2"/>
 
     <TextView
         android:id="@+id/txt_away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_marginBottom="20dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Away Team"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/away_logo"
+        app:layout_constraintEnd_toEndOf="@id/away_logo"
+        app:layout_constraintStart_toStartOf="@id/away_logo" />
 
     <ImageView
         android:id="@+id/away_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_away"
+        android:layout_marginRight="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/home_logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/home_logo"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
         android:id="@+id/score_away"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toTopOf="@+id/away_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        ndroid:text="0"
+        android:textSize="36sp"
+        android:padding="24dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toTopOf="@+id/away_logo"
+        app:layout_constraintBottom_toBottomOf="@id/away_logo"
+        app:layout_constraintStart_toEndOf="@id/stripline"
+        app:layout_constraintEnd_toStartOf="@id/away_logo" />
 
-    <Button
-        android:id="@+id/btn_add_away"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <TextView
+        android:id="@+id/event_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Add Away Score"
+        android:text="Home Team scores a 3 point!"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_add_away3"
+        android:layout_width="@id/guideline"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:text="+3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/guideline2"/>
+
+    <Button
+        android:id="@+id/btn_add_away2"
+        android:layout_width="@id/guideline"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:text="+2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_away3"/>
+
+    <Button
+        android:id="@+id/btn_add_away1"
+        android:layout_width="@id/guideline"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:text="+1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/btn_add_away2"/>
 
     <Button
         android:id="@+id/btn_result"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Cek Hasil"
+        android:layout_marginBottom="24dp"
+        android:layout_marginHorizontal="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
